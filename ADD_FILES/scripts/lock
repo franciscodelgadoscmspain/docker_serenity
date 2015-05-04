@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ ! -f .$i.lock ]
+then
+    echo "1" > .$1.lock
+    exit 0
+else
+    cnt=`cat .$1.lock`
+    cnt=$(($cnt +1))
+    echo $cnt > .$1.lock
+    exit 1
+fi

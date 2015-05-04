@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ ! -f .$1.lock ]
+then
+    exit 2
+else
+    cnt=`cat .$1.lock`
+    cnt=$(($cnt -1 ))
+    if [ "x$cnt" == "x0" ]
+    then
+        rm .$1.lock
+        exit 0
+    else
+        echo $cnt > .$1.lock
+        exit 1
+    fi
+fi

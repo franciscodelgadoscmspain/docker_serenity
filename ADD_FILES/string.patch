@@ -1,0 +1,11 @@
+--- ./swig-3.0.0/Lib/typemaps/string.swg	2014-03-16 22:49:54.000000000 +0100
++++ /usr/local/share/swig/3.0.0/typemaps/string.swg	2014-08-18 12:08:11.310771559 +0200
+@@ -18,7 +18,7 @@
+ }
+ 
+ %fragment("SWIG_strnlen","header",fragment="SWIG_FromCharPtrAndSize") {
+-size_t
++SWIGINTERN size_t
+ SWIG_strnlen(const char* s, size_t maxlen)
+ {
+   const char *p;
